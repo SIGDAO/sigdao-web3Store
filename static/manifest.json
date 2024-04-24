@@ -1,7 +1,7 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#333333",
-	"name": "The Signum DAppository",
+	"name": "Sigdao | Web3 Store",
 	"short_name": "DAppository",
 	"display": "standalone",
 	"start_url": "/",

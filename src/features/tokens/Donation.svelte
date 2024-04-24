@@ -43,7 +43,7 @@
 <Page id="donation">
     <div class="header">
         <img src="/img/donation.svg" alt="donate">
-        <div class="mdc-typography--headline6">Donate</div>
+        <div class="mdc-typography--headline6">Link</div>
     </div>
     <div class="form">
         <div class="form--header">

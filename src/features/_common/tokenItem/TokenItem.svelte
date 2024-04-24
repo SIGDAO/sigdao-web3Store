@@ -217,7 +217,7 @@
                                 </IconButton>
                             {:else}
                                 <Button on:mouseenter={prefetchDonate} on:click={handleDonate}>
-                                    <Label>Donate</Label>
+                                    <Label>Link</Label>
                                 </Button>
                             {/if}
                             {#if !compact && !isEmptyString(data.repo)}

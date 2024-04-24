@@ -60,7 +60,7 @@
             <div class="logo" on:click={gotoHome}>
                 <Logo height="42px" dark/>
                 <div class="title-text">
-                    <Title>The Signum DAppository</Title>
+                    <Title>Sigdao | Web3 Store</Title>
                 </div>
             </div>
         </Section>

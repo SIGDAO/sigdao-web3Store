@@ -9,7 +9,7 @@
         <Section>
             <Logo height="42px" />
             <div class="title-text">
-                <Title>The Signum DAppository</Title>
+                <Title>Sigdao | Web3 Store</Title>
             </div>
         </Section>
     </Row>

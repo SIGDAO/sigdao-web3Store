@@ -55,7 +55,7 @@
         </div>
         {#if !isOwner}
             <div class="actions">
-                <Button on:click={handleDonateClick}><ButtonLabel>Donate</ButtonLabel></Button>
+                <Button on:click={handleDonateClick}><ButtonLabel>Link</ButtonLabel></Button>
             </div>
         {:else}
             <div class="actions">
