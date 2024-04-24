@@ -3,13 +3,13 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=alert_status)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
 
-# Signum DAppository
+# Sigdao Web3Store
 
 <p align="center">
-    <img src="./static/android-chrome-192x192.png" alt="Signum DAppository Logo">
+    <img src="./static/android-chrome-192x192.png" alt="Sigdao Web3Store Logo">
 </p>
 
-The __Signum DAppository__ is a platform to register tools and applications for the [Signum](https://signum.network/) eco-system. 
+The __Sigdao Web3Store__ is a platform to register tools and applications for the [Signum](https://signum.network/) eco-system. 
 On one hand, this platform serves as a kind of application store, but also as an exhibition center for developers. 
 
 ## Digital Asset using Signum Smart Contracts
