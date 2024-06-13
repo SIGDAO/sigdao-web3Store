@@ -1,3 +1,7 @@
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=bugs)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=alert_status)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
 
 # Sigdao Web3Store
 
@@ -18,25 +22,3 @@ Furthermore, the token can receive amounts from other Signum Accounts. The recei
 (subtracting an inherent contract execution fee) to the owner. The number of transactions (considered as donations) 
 is counted, and the received amounts are summed up, and kept in the Smart Contract. This can be used as a success indicator. 
 
-## Developing
-
-Once you've download a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
