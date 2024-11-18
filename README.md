@@ -7,7 +7,9 @@
 
 <p align="center">
     <img src="./static/android-chrome-192x192.png" alt="Sigdao Web3Store Logo">
-</p align="center">
+</p>
+
+<p align="center">
 # STORE.SIGDAO.IO: Your Launchpad to the Future of Decentralized Applications
 
 The __Sigdao Web3Store__ is a platform to register tools and applications for the [Signum](https://signum.network/) eco-system. 
@@ -22,6 +24,8 @@ the token can only be owned by one person at a time, but it's possible to transf
 Furthermore, the token can receive amounts from other Signum Accounts. The received amount will be redirected 
 (subtracting an inherent contract execution fee) to the owner. The number of transactions (considered as donations) 
 is counted, and the received amounts are summed up, and kept in the Smart Contract. This can be used as a success indicator. 
+</p>
+
 
 ---
 ## Overview
@@ -64,4 +68,3 @@ Join us and be a part of the Web3 revolution!
 
 Visit [SIGDAO.IO](https://sigdao.io) today to start your dApp journey! Together, we can shape the future of decentralized applications.
 ```
-
