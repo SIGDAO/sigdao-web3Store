@@ -9,6 +9,7 @@
     <img src="./static/android-chrome-192x192.png" alt="Sigdao Web3Store Logo">
 </p>
 # STORE.SIGDAO.IO: Your Launchpad to the Future of Decentralized Applications
+
 The __Sigdao Web3Store__ is a platform to register tools and applications for the [Signum](https://signum.network/) eco-system. 
 On one hand, this platform serves as a kind of application store, but also as an exhibition center for developers. 
 
