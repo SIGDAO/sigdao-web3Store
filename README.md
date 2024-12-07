@@ -50,6 +50,35 @@ SIGDAO.IO is more than just a dApp store. It's a vibrant ecosystem where innovat
 
 - **Transparency and Trust**: All transactions on the SIGDAO platform are recorded on the blockchain, ensuring transparency and accountability in every funding cycle.
 
+- **The RULES of the Voting Game**: We will write some lines about every startup in the program, here are the rules :
+
+🎤 One phrase pitch - We will try to understand the essential value proposition just by their one-sentence pitch.
+👨‍🎓 We analyze the team - being the most pivotal aspect of a startup.
+
+Here, I am just stating that we are investing in the company, and having fun analyzing the business idea.
+💡 We will analyze the potential of the idea as it is. Not of potential pivots in the same business area.
+🌈 Judgment. We analyse and comment the potential values, be sure these start-ups are already doing great and really hope for them, they will all become unicorns 🦄
+
+For every one of these dApp projects, we drew two analysis criteria:
+Example:
+#IDEA dAPP108: web3 dApp store - List, Vote, Invest
+Website: https://sigdao.io
+Sector: dApp Store
+Potential (1 to 5 ⭐) — A appreciation on the potential of the project.
+Vote Raised (💸) — A proxy of community voting & validating round.
+
+Analysis - False good idea, I am bearish on this.
+It’s very complicated to fight the inertia and to ‘push’ someone to take photos of all its dishes.
+
+🟢 Positive:
+Direct Link to Value: Proove by 1+1 that you can increase margin for markets, and your product will become indispensable.
+High Differentiation: Positive loop, the more info they have, the more their algorithm will be performing.
+
+🟠 low B2B Need : the model is very hard. Everytime you talk to startuper their main need is just ‘we’d like to have more capital’, and both startuper and user are OK in keeping a scrappy platform to register.
+
+🔴 Negative: Product Risk: Their product must be easy to implement and being able to deliver the expected results.
+
+
 ### Own the Future of Web3
 
 - **Shape the dApp Landscape**: By participating in the SIGDAO ecosystem, you contribute to building a more open, inclusive, and innovative Web3 future. Your ideas can help redefine the digital landscape.
