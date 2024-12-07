@@ -1,8 +1,3 @@
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=bugs)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ohager_burst-dappository&metric=alert_status)](https://sonarcloud.io/dashboard?id=ohager_burst-dappository)
-
 # Sigdao Web3Store
 
 <p align="center">
