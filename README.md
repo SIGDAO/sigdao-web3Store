@@ -53,13 +53,17 @@ SIGDAO.IO is more than just a dApp store. It's a vibrant ecosystem where innovat
 - **The RULES of the Voting Game**: We will write some lines about every startup in the program, here are the rules :
 
 🎤 One phrase pitch - We will try to understand the essential value proposition just by their one-sentence pitch.
+
 👨‍🎓 We analyze the team - being the most pivotal aspect of a startup.
 
 Here, I am just stating that we are investing in the company, and having fun analyzing the business idea.
+
 💡 We will analyze the potential of the idea as it is. Not of potential pivots in the same business area.
+
 🌈 Judgment. We analyse and comment the potential values, be sure these start-ups are already doing great and really hope for them, they will all become unicorns 🦄
 
 For every one of these dApp projects, we drew two analysis criteria:
+
 Example:
 #IDEA dAPP108: web3 dApp store - List, Vote, Invest
 Website: https://sigdao.io
