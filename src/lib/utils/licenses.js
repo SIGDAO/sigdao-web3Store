@@ -33,10 +33,10 @@ export const Licenses = {
         brief: '',
         url: LicenseUrl('MIT'),
     },
-    'Proprietary': {
-        brief: '',
-        url: '',
-    },
+    // 'Proprietary': {
+    //     brief: '',
+    //     url: '',
+    // },
     'Unlicense': {
         brief: '',
         url: LicenseUrl('Unlicense'),

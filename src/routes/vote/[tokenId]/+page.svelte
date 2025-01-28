@@ -12,7 +12,7 @@
     export let data;
     export let tokenId;
     export let tokenData;
-    console.log("data: ",data);
+  //  console.log("data: ",data);
     $: tokenId = data.tokenId;
     $: token = $tokens$.items.find(i => i.at === tokenId);
   </script>

@@ -3,6 +3,6 @@ import { ledgerService } from '../services/ledgerService'
 
 export async function preloadToken(tokenId) {
     const contract = await ledgerService.client.contract.getContract(tokenId)
-    console.log("contract", contract);
+    // console.log("contract", contract);
     return ApplicationToken.mapFromContract(contract)
 }

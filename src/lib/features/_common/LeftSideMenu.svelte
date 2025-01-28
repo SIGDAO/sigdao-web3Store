@@ -8,7 +8,7 @@
     import { account$, clearAccount } from './accountStore'
     import { setTheme, theme$ } from './appStore'
     import { isEmptyString } from '../../utils/isEmptyString'
-    import { RouteAbout, RouteAccountTokens, RouteHome, RouteTutorial } from '../../utils/routes'
+    import { RouteAbout, RouteAccountTokens, RouteHome, RouteTutorial, RouteLike} from '../../utils/routes'
     import { Events } from '../../utils/events'
     import { dispatchEvent } from '../../utils/dispatchEvent'
     import { ThemeNames } from '../../utils/themeNames'
@@ -17,13 +17,14 @@
     let drawerElement
     export let open = false
     let active
-
+    // 13/1/2025 Add the new route for liked projects 
     const ItemNames = {
         EnterAccountZone: 'enter-account-zone',
         LeaveAccountZone: 'leave-account-zone',
         Tutorial: 'tutorial',
         About: 'about',
         Home: 'home',
+        Like: 'like'
     }
 
     $: currentAccount = $account$.accountId
@@ -75,6 +76,9 @@
     function gotoHome() {
         routeTo(RouteHome())
     }
+    function gotoLike() {
+        routeTo(RouteLike())
+    }
 
     function prefetchTutorial() {
         preloadData(RouteTutorial())
@@ -105,6 +109,11 @@
                   activated={active === ItemNames.Home}>
                 <Graphic class="material-icons" aria-hidden="true">home</Graphic>
                 <Text>Home</Text>
+            </Item>
+            <Item on:click={gotoLike}
+                  activated={active === ItemNames.Like}>
+                <Graphic class="material-icons" aria-hidden="true">favorite</Graphic>
+                <Text>Favorite Applications</Text>
             </Item>
             {#if hasAccount}
                 <Item on:click={leaveAccountZone}

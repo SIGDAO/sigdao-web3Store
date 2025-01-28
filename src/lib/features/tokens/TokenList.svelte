@@ -15,20 +15,33 @@
     import TokenListItem from '../_common/tokenItem/TokenListItem.svelte'
     import {account$} from "../_common/accountStore";
     import {xtWallet$} from "../_common/xtWalletStore";
-
+    import { get } from 'svelte/store'
+    import likeList from '$lib/store/likeList';
     export let searchText = ''
     let itemListContainerHeight = 0
 
     const { tokens$ } = tokenStore
 
     $: unfilteredActiveTokens = $tokens$.items.filter((t) => {
-        console.log("t",t)
-        // for testing purposes
-        if(t.isActive) {
-            if (!t.tags.includes("legacy"))
-            return t
+        // console.log("t",t)
+        // make the likeList for the tokens
+        const likeListJson = get(likeList);
+        const likeListArray = JSON.parse(likeListJson);
+        // if the token is in the likeList, set isLike to true
+        if(likeListArray.includes(t.at)){
+            t.isLike = true
+        }else{ t.isLike = false}
         // for development purposes
-            // if (!t.tags.includes("test")&&!t.tags.includes("legacy"))
+        if(t.isActive) {
+            // if (!t.tags.includes("legacy"))
+            // return t
+        // for production purposes
+            if (!t.tags.includes("test")&&!t.tags.includes("legacy")){
+                if (t.creationBlock > 966070){
+                    return t
+                }
+            }
+            
             // return t
         }})
     // $: activeTokens = () => {
@@ -122,9 +135,9 @@
 </div>
  
 <style>
-    :root {
+    /* :root {
 
-    }
+    } */
 
     .container {
         position: relative;

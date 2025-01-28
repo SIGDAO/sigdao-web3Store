@@ -5,6 +5,6 @@
 import { json } from '@sveltejs/kit';
 
 export function GET() {
-    console.log("ok");
+ //   console.log("ok");
 	return new Response('Web3store is running fine...');
 }

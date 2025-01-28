@@ -41,7 +41,7 @@
     const recipientAddress = convertNumericIdToAddress(assureAccountId(recipient))
     info.push(['Recipient:', recipientAddress])
     info.push(...costs)
-    info.push(['Sigdao Donation:', (sigdaoAmount+' SIGDAO')])
+    info.push(['Fee in SIGDAO:', (sigdaoAmount+' SIGDAO')])
     info.push(['Fee:', fee])
     info.push(['---', ''])
     info.push(['Total:', (Amount.fromSigna(totalCosts.getSigna()).add(fee) + " & " + sigdaoAmount+ " SIGDAO")])
@@ -64,7 +64,7 @@
   async function payNow() {
     if (wallet) {
       const paySigdaoResult = await paySigdaoWithXtWallet();
-      console.log("paySigdaoResult:",paySigdaoResult);
+     // console.log("paySigdaoResult:",paySigdaoResult);
       if (paySigdaoResult === true ){
         dispatchEvent(Events.Success, "Sigdao Transaction successfully transmitted")
         await payWithXtWallet()
@@ -96,34 +96,34 @@
 
   }
   async function paySigdaoWithXtWallet(){
-        console.log("token:",token);
-        console.log("recipient:",recipient);
-        console.log("xtWallet:", $xtWallet$.wallet );
-        console.log("currentNodeHost:", $xtWallet$.wallet._connection.currentNodeHost);
-        console.log("fee:",fee);
-        console.log("cost",totalCosts.getPlanck());
+        //console.log("token:",token);
+        //console.log("recipient:",recipient);
+        //console.log("xtWallet:", $xtWallet$.wallet );
+        //console.log("currentNodeHost:", $xtWallet$.wallet._connection.currentNodeHost);
+        //console.log("fee:",fee);
+        //console.log("cost",totalCosts.getPlanck());
         // get Get Token Transfers => check the sigdao is enough or not  => send the request to xt-wallet => sign the transaction 
         try {
         const responseByGetAccountAssets = await fetch(`${$xtWallet$.wallet._connection.currentNodeHost}/api?requestType=getAccountAssets&account=${$xtWallet$.wallet._connection.accountId}`);
         const dataByGetAccountAssets = await responseByGetAccountAssets.json();
         if (dataByGetAccountAssets) {
-            console.log("dataByGetAccountAssets:",dataByGetAccountAssets);
+            //console.log("dataByGetAccountAssets:",dataByGetAccountAssets);
             let sigdao = dataByGetAccountAssets.assetBalances.filter(assetBalance => assetBalance.asset === "5453974739826751020")
-            console.log("sigdao:",sigdao);
+            //console.log("sigdao:",sigdao);
             if (sigdao.length === 0) {
                 throw new Error("no sigdao");
             }
             if (sigdao[0].balanceQNT < 10000000) {
-                console.log("not enough balance");
+               // console.log("not enough balance");
                 throw new Error("not enough balance");
             }
-            console.log(dataByGetAccountAssets.assetBalances);
-            console.log(`enough balance`);
+            //console.log(dataByGetAccountAssets.assetBalances);
+            //console.log(`enough balance`);
             const responseByTransferAsset = await fetch(`${$xtWallet$.wallet._connection.currentNodeHost}/api?requestType=transferAsset&recipient=${token.creator}&asset=5453974739826751020&quantityQNT=${parseInt(sigdaoAmount)*1000000}&amountNQT=0&feeNQT=1000000&publicKey=${wallet.connection.publicKey}&deadline=60`);
             const dataByTransferAsset = await responseByTransferAsset.json();
-            console.log(dataByTransferAsset);
+            //console.log(dataByTransferAsset);
             const confirmResult = await $xtWallet$.wallet.confirm(dataByTransferAsset.unsignedTransactionBytes);
-            console.log("confirmResult:",confirmResult);
+           // console.log("confirmResult:",confirmResult);
             return true
         }
       } catch (error) {

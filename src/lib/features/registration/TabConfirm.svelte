@@ -69,14 +69,18 @@
                         type={isPassphraseVisible ? 'text' : 'password'}
                         withTrailingIcon
                 >
+                <svelte:fragment slot="trailingIcon">
                     <Icon class="material-icons"
                           role="button"
                           on:click={toggleVisibility}>{isPassphraseVisible ? 'visibility_off' : 'visibility'}
                     </Icon>
+                  </svelte:fragment>
+
+                    <HelperText slot="helper" validationMsg>{message()}</HelperText>
                 </TextField>
-                {#if isInvalid}
+                <!-- {#if isInvalid}
                     <HelperText validationMsg>{message()}</HelperText>
-                {/if}
+                {/if} -->
             </div>
         {/if}
     </div>

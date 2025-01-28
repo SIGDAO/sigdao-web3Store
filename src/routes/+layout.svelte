@@ -35,7 +35,7 @@
 		Layout Options
 	</h2>
 
-    <form bind:this={layoutForm} on:change={handleFormChange}>
+    <!-- <form bind:this={layoutForm} on:change={handleFormChange}>
         <label for="layout">Navigation Location</label>
         <select name="layout" value={$layout}>
             <option value="top">Top</option>
@@ -59,7 +59,7 @@
             <textarea type="textarea" cols={20} name="message" bind:value={thisMessage} />
         </div>
 
-    </form>
+    </form> -->
 
 </Modal>
 

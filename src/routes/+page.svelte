@@ -72,7 +72,7 @@
 	import {showModal} from '../stores';
 	// need to use like SPA and not SSR (due to sapper export)
 	let query = getUrlQuery();
-
+	// let { data } = $props();
 	$: accountId = $account$.accountId;
 	$: hasAccount = !isEmptyString(accountId);
 	$: searchText = "";
