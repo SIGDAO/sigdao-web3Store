@@ -6,6 +6,10 @@
   import IconButton, {Icon} from '@smui/icon-button'
   import MenuSurface from '@smui/menu-surface'
   import {goto, preloadData} from '$app/navigation'
+  // import likeList from '$lib/store/likeList';
+  // store for the likeList
+  import { get } from 'svelte/store'
+  import likeList from '$lib/store/likeList';
   import {
     RouteDonate,
     RouteActivate,
@@ -35,6 +39,7 @@
     tags: [],
     donationPlanck: '0',
     isActive: true,
+    isLike: false,
   }
 
   const PlaceholderImage = '../img/placeholder.noimage.svg'
@@ -43,7 +48,8 @@
   let isElevated = false
   let sharingIconSurface = null
   const dispatch = createEventDispatcher()
-
+ 
+  $: isLike = data.isLike
   $: tags = data.tags && data.tags.filter(t => t.trim().length > 0).map( t => t.toUpperCase() )
   $: donation = Amount.fromPlanck(data.donationPlanck || '0')
   $: imageUrl = data.img || PlaceholderImage
@@ -143,7 +149,56 @@
     e.stopImmediatePropagation()
     dispatch('tag-click', e.target.textContent)
   }
+  let likes = 0;
+  // function to toggle the like button and update the likeList store and local storage 
+  function toggleLike() {
+    
+    isLike = !isLike;
+    likes += isLike ? 1 : -1;
+   
+    
+    
+    //console.log("likeList", $likeList);
+    const likeListJson = get(likeList);
+    //console.log(JSON.parse(likeListJson));
+    const likeListArray = JSON.parse(likeListJson);
+    //console.log(data.at);
+    if (likeListArray) {
+      // const likeList = get(likeList);
+      if (isLike) {
+       // console.log("after like");
+        likeListArray.push(data.at);
+       // console.log(likeListArray);
+        likeList.set(JSON.stringify(likeListArray));
+      } else {
+        likeListArray.splice(likeListArray.indexOf(data.at), 1);
+       //console.log("after dislike");
+        //console.log(likeListArray);
+        //likeList.set(JSON.stringify(likeListArray));
+      }
+    } else {
+     // console.log("likeList is null");
+    }
+  }
+  // function setCookie(name, value, days) {
+  //   const expires = new Date();
+  //   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  //   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  // }
 
+  // function getCookie(name) {
+  //   const nameEQ = name + "=";
+  //   const ca = document.cookie.split(';');
+  //   console.log(ca);
+  //   for(let i = 0; i < ca.length; i++) {
+  //     let c = ca[i];
+  //     while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+  //     if (c.indexOf(nameEQ) === 0) 
+      
+  //     return c.substring(nameEQ.length, c.length);
+  //   }
+  //   return null;
+  // }
 </script>
 
 <div class="item-container">
@@ -230,12 +285,20 @@
                             {/if}
                         {:else}
                             {#if compact}
-                                <IconButton class="material-icons" on:click={prefetchDonate}
+                            <!-- The liking button for future development -->
+                                <!-- <IconButton class="material-icons" on:click={prefetchDonate}
                                             title="Donate">favorite_border
+                                </IconButton> -->
+                                {#if isLike}
+                                <IconButton class="material-icons" on:click={toggleLike}> favorite </IconButton>
+                                  {:else}
+                                  <IconButton class="material-icons" on:click={toggleLike}>
+                                    favorite_border
                                 </IconButton>
+                                {/if}
                             {:else}
                                 <Button on:mouseenter={prefetchDonate} on:click={handleDonate}>
-                                    <Label>Voting</Label>
+                                    <Label>Vote</Label>
                                 </Button>
                             {/if}
                             {#if !compact && !isEmptyString(data.repo)}

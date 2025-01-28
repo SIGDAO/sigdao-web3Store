@@ -19,8 +19,8 @@
     <div class="container">
         <div class="description">
             <div class="mdc-typography--body1">
-                The contract stores the total amount and the number of all donations received.
-                From these values a <b>Token Score</b> is determined. The more donations, the higher the score. The Token Score
+                The contract stores the total amount and the number of all voting received.
+                From these values a <b>Token Score</b> is determined. The more voting, the higher the score. The Token Score
                 is considered as an indicator for an <b>applications popularity</b>.
             </div>
             <div class="mdc-typography--body1">

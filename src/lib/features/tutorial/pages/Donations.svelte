@@ -15,7 +15,7 @@
 </script>
 
 <TutorialPage>
-    <h1 class="mdc-typography--headline6">How donation works?</h1>
+    <h1 class="mdc-typography--headline6">How voting system works?</h1>
 
     <div class="container">
         <div class="card-preview">
@@ -24,13 +24,13 @@
         </div>
         <div class="description">
             <div class="mdc-typography--body1">
-                The tokens main feature is receiving donations. Anyone who has a Signum account
+                The tokens main feature is receiving voting. Anyone who has a Signum account
                 can send SIGNA to that token. The <b>owner automatically receives the amount</b>
                 minus {TokenContract.ActivationCosts} SIGNA and a 1% commission. While the commission goes to the maintainer of this project,
                 the {TokenContract.ActivationCosts} SIGNA remains in the token to pay the execution costs and raising the tokens value.
                 Only <b>on deactivation the remaining balance will be transferred to the owner</b>.
                 <br/>
-                Each received donation raises not only the tokens value, but also the <b>tokens score</b>.
+                Each received voting raises not only the tokens value, but also the <b>tokens score</b>.
             </div>
         </div>
     </div>

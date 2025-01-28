@@ -41,9 +41,9 @@ export const isValidRepoUrl = url => {
 export const isValidImageFileUrl = async ( url ) => {
     // return hasLength(url, 1, MaxUrlLength) && testUrl(url)
     try {
-        console.log("url: ",url);
+       // console.log("url: ",url);
         const response = await fetch(url);
-        console.log("response: ", response)
+       // console.log("response: ", response)
         if (!response.ok) {
           throw new Error('Image not found');
         }

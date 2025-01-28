@@ -32,8 +32,8 @@
     $: isQrCodeVisible = !isEmptyAmount && isValidAmount && !isEmptySigdaoAmount && isValidSigdaoAmount
     $: suggestedFee = $fee$
     $: costs = isQrCodeVisible ? [
-        ['Donation:', Amount.fromSigna(amount || 0)],
-        ['Entitlement (will be reimbursed):', Amount.fromSigna(TokenContract.DonationEntitlement)],
+        ['Voting amount in SIGNA:', Amount.fromSigna(amount || 0)],
+        ['Entitlement (100 SIGNA will be refund):', Amount.fromSigna(TokenContract.DonationEntitlement)],
     ] : []
 
     function handleCancel() {
@@ -111,7 +111,7 @@
                 </p> -->
                 <p class="mdc-typography--body1">
                     Note that you will be charged an <em>Entitlement Fee</em> of {TokenContract.DonationEntitlement} SIGNA and then charged at least 1 SIGDAO and 1 SIGNA for voting amount.
-                    But the entitlement fee of 100 SIGNA will be reimbursed entirely once the voting was processed.
+                    But the entitlement fee of 100 SIGNA will be refund entirely once the voting was processed.
                 </p>
             </article>
             <div class="item-wrapper">
@@ -122,7 +122,7 @@
             <div class="form--input-field">
                 <TextField bind:value={amount}
                            invalid={!isEmptyAmount && !isValidAmount}
-                           label="Voting Amount"
+                           label="Voting Amount in SIGNA"
                 />
              
                 {#if isEmptyAmount}
@@ -131,14 +131,14 @@
                     <HelperText validationMsg>Invalid Amount</HelperText>
                 {/if}
             </div>
-            <span class="mdc-typography--headline6">SIGNA</span>
+            <span class="mdc-typography--headline6"></span>
         </div>
         
         <div class="form--input">
             <div class="form--input-field">
                 <TextField bind:value={sigdaoAmount}
                 invalid={!isEmptyAmount && !isValidSigdaoAmount}
-                label="Sigdao Voting Amount"
+                label="Voting Amount in SIGDAO"
                 />
                 {#if isEmptyAmount}
                     <HelperText>Enter the amount you like to donate</HelperText>
@@ -146,7 +146,7 @@
                     <HelperText validationMsg>Invalid Amount</HelperText>
                 {/if}
             </div>
-            <span class="mdc-typography--headline6">SIGDAO</span>
+            <span class="mdc-typography--headline6"></span>
         </div>
         
 

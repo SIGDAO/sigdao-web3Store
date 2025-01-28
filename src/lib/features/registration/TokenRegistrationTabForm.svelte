@@ -69,11 +69,11 @@
             // console.log("currentTabIndex: " , currentTabIndex)
             try {
             if (currentTabIndex === 1){
-            console.log("currnetTab01")
+            //console.log("currnetTab01")
             const response = await fetch($registration$.img);
-            console.log("response: ", response)
+            //console.log("response: ", response)
                if (response.ok) {
-                console.log("handleNextRes: ", response);
+               // console.log("handleNextRes: ", response);
                 const nextIndex = Math.min(currentTabIndex + 1, Tabs.length - 1)
                 active = Tabs[nextIndex]
                }

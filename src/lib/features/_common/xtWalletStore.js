@@ -35,6 +35,8 @@ function onAccountRemoved() {
 
 function onNetworkChanged(args) {
     const expectedNetwork = Vars.IsTestnet ? 'Signum-TESTNET' : 'Signum'
+    // console.log("expectedNetwork", expectedNetwork);
+    // console.log("args.networkName", args.networkName);
     if (args.networkName !== expectedNetwork) {
         dispatchEvent(Events.Warning, 'Unsupported Network selected')
     } else {
@@ -66,7 +68,7 @@ export async function connectXtWallet() {
         xtWallet$.set({ wallet })
         console.debug('XT Wallet connected')
     } catch (e) {
-        dispatchEvent(Events.Error, "Problem occurred while connecting to XT Wallet. Please refresh the page again")
+        dispatchEvent(Events.Error, e.message)
     }
 }
 

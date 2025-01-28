@@ -16,13 +16,13 @@
         const likeListJson = get(likeList);
         const likeListArray = JSON.parse(likeListJson);
         
-        // if the token is in the likeList, set isLike to true
+        // if the token is in the likeList, return true to filter function 
         if(likeListArray.includes(i.at)){
             return true
         }else{ return false}
     }
-    $: tokens = $tokens$.items.filter(isOwnToken).filter(isNotDeactivated)
-    // $: tokens = $tokens$.items.filter(isLike)
+    // $: tokens = $tokens$.items.filter(isOwnToken).filter(isNotDeactivated)
+    $: tokens = $tokens$.items.filter(isLike)
     $: unconfirmedTokens = $tokens$.unconfirmedItems.filter(isOwnToken)
     $: hasPendingTransaction = at => $activeTokenMonitors$.some(id => id === at)
     $: isAccountZoneActive = $account$.accountId === accountId

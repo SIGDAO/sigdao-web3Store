@@ -19,7 +19,7 @@
         const { currentBlock: block } = $blockchainStatus$
         if(block){
             badges = badgeRulesEngine.run({ token, allTokens, block })
-            console.log("badges:",badges);
+            //console.log("badges:",badges);
         }
         
     }

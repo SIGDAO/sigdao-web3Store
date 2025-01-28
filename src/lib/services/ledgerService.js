@@ -18,6 +18,7 @@ export class LedgerService {
                 nodeHost: nodeHost,
             })
             console.debug('Updated node to', nodeHost)
+            console.log("Updated node to", nodeHost)
         }
     }
 }

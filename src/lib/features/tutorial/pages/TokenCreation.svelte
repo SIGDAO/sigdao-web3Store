@@ -18,7 +18,7 @@
         </p>
         <ol class="mdc-typography--body1">
             <li>
-                to register you must "login" with your creator account, that will receive the donations later
+                to register you must "login" with your creator account, that will receive the voting later
             </li>
             <li>
                 fill in the form as completely as possible and confirm the process with your secret passphrase
@@ -31,7 +31,7 @@
             </li>
         </ol>
         <p class="mdc-typography--body1">
-            Once activated, the token becomes publicly visible and can receive donations.
+            Once activated, the token becomes publicly visible and can receive voting.
         </p>
     </div>
 </TutorialPage>

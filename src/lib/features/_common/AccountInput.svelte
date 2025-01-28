@@ -47,16 +47,20 @@
                    on:input={({target}) => validateAccount(target.value)}
                    invalid={!valid}
                    label='Account Id or Address'
+                   variant="filled"
                    withTrailingIcon
         >
+        <svelte:fragment slot="trailingIcon">
             <Icon class={`material-icons ${valid ? 'green' : ''}`}>
                 {valid ? 'check_circle' : 'error'}
             </Icon>
+        </svelte:fragment>
             <div class="address">
                 {accountAddress}
             </div>
+            <HelperText slot="helper" validationMsg>{errorMessage}</HelperText>
         </TextField>
-        <HelperText validationMsg>{errorMessage}</HelperText>
+        <!-- <HelperText validationMsg>{errorMessage}</HelperText> -->
     </div>
 </div>
 

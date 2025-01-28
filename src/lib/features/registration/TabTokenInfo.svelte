@@ -17,7 +17,7 @@
     import { sanitizeUrl } from '@braintree/sanitize-url'
     import { apiService } from '$lib/services/apiService'
     import { isValidUrl ,isValidImageFileUrl} from '../../utils/validators'
-
+    
     const licensesSpdx = Object.keys(Licenses)
     const characterCount = (text = '', max) => `${text.length}/${max}`
 
@@ -58,7 +58,7 @@
 
     function addTag(t) {
         const trimmed = t.trim();
-        if (trimmed.length && !hasTag(trimmed) && !hasMaximumTags) {
+        if (trimmed.length && !hasTag(trimmed) && !hasMaximumTags && trimmed.length <= MaxTagLength) {
             $registration$.tags = [...$registration$.tags, trimmed.toLowerCase()]
             tag = ''
         }
@@ -126,17 +126,22 @@
             <TextField bind:value={$registration$.name}
                        invalid={isInvalidName}
                        label={nameFieldLabel}
-            />
-            {#if isInvalidName}
-                <HelperText validationMsg>{
-                isEmptyString($registration$.name)
-                ? 'Application Name is required'
-                : `Name must not be larger than ${MaxNameLength} characters`
-                }
-                </HelperText>
-            {/if}
+                       
+            >
+            <!-- {#if isInvalidName} -->
+            <HelperText slot="helper" validationMsg>{
+            isEmptyString($registration$.name)
+            ? 'Application Name is required'
+            : `Name must not be larger than ${MaxNameLength} characters`
+            }
+            </HelperText>
+        <!-- {/if} -->
+            </TextField>
+       
+                    
         </div>
     </div>
+   
     <div class="form--input">
         <div class="form--input-field">
             <TextField
@@ -144,15 +149,18 @@
                     bind:value={$registration$.desc}
                     invalid={isInvalidDescription}
                     label={descriptionFieldLabel}
-            />
-            {#if isInvalidDescription}
-                <HelperText validationMsg>{
+            >
+            <!-- {#if isInvalidDescription} -->
+                <HelperText slot="helper" validationMsg>{
                 isEmptyString($registration$.name)
                 ? 'Description is required'
                 : `Description must not be larger than ${MaxDescriptionLength} characters`
                 }
                 </HelperText>
-            {/if}
+
+
+            <!-- {/if} -->
+            </TextField>
         </div>
     </div>
     <div class="form--input">
@@ -160,15 +168,16 @@
             <TextField bind:value={$registration$.img}
                        invalid={isInvalidImage}
                        label={projectImageLabel}
-            />
-            {#if isInvalidName}
-                <HelperText validationMsg>{
-                isEmptyString($registration$.name)
-                ? 'Application Name is required'
-                : `Name must not be larger than ${MaxNameLength} characters`
+            >
+                
+                <HelperText slot="helper" svalidationMsg  persistent>{
+                isEmptyString($registration$.img)
+                ? 'Image URL is required'
+                : `Name must not be larger than ${MaxDataLength} characters`
                 }
                 </HelperText>
-            {/if}
+               <!-- {/if} -->
+            </TextField>
         </div>
     </div>
     <!-- <div class="form--inline">
@@ -219,10 +228,18 @@
                        label={repoFieldLabel}
                        type="url"
                        on:change={handleRepoUrlChanged}
-            />
-            {#if isInvalidRepo}
+            >
+           
+            <HelperText slot="helper" validationMsg>{
+            isInvalidRepo
+                ? 'Unsupported or invalid URL'
+                : ``
+                }</HelperText>
+        
+            </TextField>
+            <!-- {#if isInvalidRepo}
                 <HelperText validationMsg>Unsupported or invalid URL</HelperText>
-            {/if}
+            {/if} -->
         </div>
     </div>
 
@@ -234,12 +251,22 @@
                        disabled={hasMaximumTags}
                        withTrailingIcon={!hasMaximumTags}
                        on:keypress={handleTagKeypress}
+                    
             >
+            <svelte:fragment slot="trailingIcon">
                 {#if !hasMaximumTags && tag.trim().length > 0}
                     <TextFieldIcon class="material-icons" role="button" on:click={() => addTag(tag)}>add_circle
                     </TextFieldIcon>
                 {/if}
+            </svelte:fragment>
+            <HelperText slot="helper" validationMsg>{
+                hasTag(tag)
+                ? 'Tag already added'
+                : `Tag must not be larger than ${MaxTagLength} characters`
+                }
+                </HelperText>
             </TextField>
+           
             {#if isInvalidTag}
                 <HelperText validationMsg>{
                 hasTag(tag)
@@ -248,12 +275,16 @@
                 }
                 </HelperText>
             {/if}
-            {#each $registration$.tags as tag}
-            <button >
-                <Text>{tag.toUpperCase()}</Text>
-                <Icon class="material-icons" trailing role="button" on:click={() => removeTag(tag)}>cancel</Icon>
-            </button>
-          {/each}
+              <div>
+                {#each $registration$.tags as tag}
+          
+                <button class="mdc-chip" type="button">
+                    <Text>{tag.toUpperCase()}</Text>
+                    <Icon class="material-icons" trailing role="button" on:click={() => removeTag(tag)}>cancel</Icon>
+                </button>
+                
+              {/each}
+            </div>
             <!-- <Set chips={$registration$.tags} let:chip input>
                 <Chip>
                     <Text>{chip.toUpperCase()}</Text>
